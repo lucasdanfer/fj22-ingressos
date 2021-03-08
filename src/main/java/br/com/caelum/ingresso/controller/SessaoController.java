@@ -57,6 +57,9 @@ public class SessaoController {
 			return new ModelAndView("redirect:/admin/sala/" + form.getSalaId() + "/sessoes");
 		}
 		
+		form.setFilmeId(null);
+		form.setHorario(null);
+		
 		return form(form.getSalaId(), form);
 	}
 }
