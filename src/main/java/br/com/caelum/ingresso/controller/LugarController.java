@@ -23,7 +23,7 @@ import javax.validation.Valid;
 public class LugarController {
 
 
-    @Autowired
+	@Autowired
     private SalaDao salaDao;
     @Autowired
     private LugarDao lugarDao;
