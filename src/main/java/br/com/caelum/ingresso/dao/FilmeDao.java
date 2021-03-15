@@ -16,7 +16,6 @@ public class FilmeDao {
     @PersistenceContext
     private EntityManager manager;
 
-
     public Filme findOne(Integer id) {
         return manager.find(Filme.class, id);
     }
