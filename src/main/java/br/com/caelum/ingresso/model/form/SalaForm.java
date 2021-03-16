@@ -1,5 +1,6 @@
 package br.com.caelum.ingresso.model.form;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +17,8 @@ public class SalaForm {
     private String nome;
 
     private List<Lugar> lugares = new ArrayList<>();
+    
+    private BigDecimal preco;
 
     public SalaForm() {
     }
@@ -54,7 +57,16 @@ public class SalaForm {
         Sala sala = new Sala(this.nome);
         sala.setId(this.salaId);
         sala.setLugares(new HashSet<>(this.lugares));
+        sala.setPreco(preco);
         return sala;
     }
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
 
 }
