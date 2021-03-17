@@ -34,7 +34,12 @@ public class Sala {
         this.nome = nome;
     }
 
-    public Integer getId() {
+    public Sala(String nome, BigDecimal preco, String endereco) {
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+	public Integer getId() {
         return id;
     }
 

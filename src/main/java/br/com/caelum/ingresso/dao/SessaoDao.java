@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.caelum.ingresso.model.Filme;
 import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
 
@@ -22,8 +23,15 @@ public class SessaoDao {
 
 	public List<Sessao> buscaSessoesDaSala(Sala sala) {
 
-		return manager.createQuery("select s from Sessao s where s.sala = :x", Sessao.class)
-		.setParameter("x", sala).getResultList();
+		return manager.createQuery("select s from Sessao s where s.sala = :x", Sessao.class).setParameter("x", sala)
+				.getResultList();
+
+	}
+	
+	public List<Sessao> buscaSessoesDoFilme(Filme filme){
+		
+		return manager.createQuery("select s from Sessao s where s.filme = :filmeDoParametro", Sessao.class)
+				.setParameter("filmeDoParametro", filme).getResultList();
 		
 	}
 
